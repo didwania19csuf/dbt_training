@@ -37,10 +37,19 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   jaffle_shop:
+    
     # Applies to all files under models/example/
     example:
       +materialized: table
     staging:
       materialized: view
+      +required_tests: {"unique.*|not_null": 1}
     marts:
       materialized: table
+
+
+tests:
+    jaffle_shop:
+      +severity: warn
+      +store_failures: true
+      
