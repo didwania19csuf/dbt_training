@@ -11,3 +11,4 @@ sources:
       - name: raw_items
       - name: raw_stores
       - name: raw_supplies
+      - name: payments
