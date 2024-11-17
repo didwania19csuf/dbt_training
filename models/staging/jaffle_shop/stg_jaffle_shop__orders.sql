@@ -5,3 +5,6 @@ select
    
 
 from {{ source('jaffle_shop', 'raw_orders') }}
+
+{{limit_data_in_dev('ordered_at')}}
+
